@@ -45,6 +45,7 @@ const C = {
   bg:"#080b0f", surface:"#0f1318", card:"#151a20", border:"#1e2530",
 color:"#5a6878", monthly:0  }
 , , , ,
+
    accent:"#00d4aa", accentDim:"#00d4aa18",
   text:"#e8edf2", muted:"#5a6878", mutedLight:"#8a9bb0",
   danger:"#ff5555", success:"#00d4aa", warning:"#f5a623", info:"#4d9fff", gold:"#f5c84
@@ -1353,4 +1354,36 @@ export default function App() {
       setVisits(data?.visits||[]);
 siness?
 
- 
+       setSales(data?.sales||[]);
+      setActive("dashboard");
+    } else {
+      setActive("admin");
+    }
+    setScreen("app");
+  };
+  const logout=()=>{ setScreen("login"); setCurUser(""); setBusiness(null); setBizInfo
+  if (screen==="login") return <LoginScreen onLogin={handleLogin}/>;
+  if (showRenew&&!isAdmin) return <PaymentScreen onBack={()=>setShowRenew(false)} rene
+  return (
+    <div style={{display:"flex",height:"100vh",background:C.bg,color:C.text,fontFamily
+      <style>{css}</style>
+      <Sidebar active={active} setActive={setActive} isAdmin={isAdmin} bizName={busine
+      <main style={{flex:1,overflowY:"auto",padding:32}}>
+        {active==="dashboard" &&!isAdmin&&<Dashboard clients={clients} sales={sales} v
+        {active==="clients"  &&!isAdmin&&<Clients   clients={clients} setClients={setC
+        {active==="visits"   &&!isAdmin&&<Visits    clients={clients} setClients={setC
+        {active==="sales"    &&!isAdmin&&<Sales     sales={sales} setSales={setSales}/
+        {active==="settings" &&!isAdmin&&<Settings  business={business} onUpdate={b=>s
+        {active==="admin"    && isAdmin&&<AdminPanel/>}
+      </main>
+    </div>
+); }
+(null);
+walMode
+:"'DM S
+ss?.nam
+isits={
+lients}
+lients}
+>}
+etBusin
